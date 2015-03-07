@@ -19,7 +19,7 @@ var NotificationContent = React.createFactory(React.createClass({
   render: function() {
     var style = {
       "textAlign": "justify"
-    }
+    };
 
     return (
       TABLE({className: "defaultContentTable"},
@@ -41,13 +41,13 @@ var NotificationContent = React.createFactory(React.createClass({
         ),
         TR({},
           TD({colSpan: 2},
-            DIV({className: "layerImage add img-thumbnail"},
+            DIV({className: "add img-thumbnail"},
               DIV({id: "start"}, this.props.start)
             )
           )
         )
       )
-    )
+    );
   },
 }));
 

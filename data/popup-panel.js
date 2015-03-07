@@ -124,8 +124,8 @@ var DefaultContent = React.createFactory(React.createClass({
         ),
         TR({},
           TD({colSpan: 2},
-            DIV({className: "layerImage add img-thumbnail"},
-              DIV({onClick: this.props.addLayer},
+            DIV({className: "layerImage add"},
+              DIV({className: "btn medium", onClick: this.props.addLayer},
                 Locale.$STR("pixelPerfect.label.addLayer")
               )
             )
@@ -139,7 +139,7 @@ var DefaultContent = React.createFactory(React.createClass({
           )
         )
       )
-    )
+    );
   },
 
   onHomePage: function() {

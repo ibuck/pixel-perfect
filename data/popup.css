@@ -23,6 +23,24 @@ body[collapsed="true"] {
   display: none;
 }
 
+.img-thumbnail, .btn {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+
+.btn.medium {
+  width: 100px;
+}
+
 /******************************************************************************/
 /* Panel */
 
@@ -111,6 +129,12 @@ body[collapsed="true"] {
 
 .layerCell {
   padding: 4px;
+  margin: 0;
+}
+
+.collapse {
+  margin: 0;
+  padding: 0;
 }
 
 .layerImage.add {
@@ -120,26 +144,20 @@ body[collapsed="true"] {
 }
 
 .layerImage.add:hover {
-  background-color: rgb(237, 237, 237);
+  /*background-color: rgb(237, 237, 237);*/
 }
 
 /******************************************************************************/
 /* Layer Image Box */
 
-.layerImageBox,
-.layerImage {
+.layerImageBox {
   width: 96px;
 }
 
 .layerImageBox {
-  border: 3px solid transparent;
   border-radius: 4px;
   position: relative;
   display: inline-block;
-}
-
-.layerImageBox.selected {
-  border: 3px solid rgb(76, 158, 217);
 }
 
 .layerImageBox .closeButton {
@@ -157,6 +175,43 @@ body[collapsed="true"] {
 
 .layerImageBox:hover .closeButton {
   display: block;
+}
+
+.layerImageBox.thumbnail {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.layerImageBox.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.layerImageBox .btn {
+  width: 75px;
+  float: left;
+}
+
+.collapse {
+  margin: 0;
+  padding: 0;
+}
+
+.layerImageBox {
+  border: 3px solid #fff;
+}
+
+.layerImageBox.selected {
+  border: 3px solid rgb(76, 158, 217);
 }
 
 /******************************************************************************/
@@ -179,7 +234,7 @@ body[collapsed="true"] {
 .defaultContentImage {
 }
 
-td.defaultContentHeader {
+.defaultContentHeader {
   padding-left: 0;
   font-size: 200%;
   font-weight: bold;
@@ -200,4 +255,12 @@ td.defaultContentHeader {
 .pixel-perfect-label{
   font-weight: normal;
   display: inline;
+}
+
+/******************************************************************************/
+/* Notification Panel */
+
+#start {
+  white-space: nowrap;
+  cursor: pointer;
 }

@@ -163,13 +163,13 @@ var LayerRow = React.createFactory(React.createClass({
 
     return (
       TR({className: "layerRow", onClick: this.props.selectLayer},
-        TD({className: "layerCell"},
+        TD({className: "layerCell collapse"},
           INPUT({type: "checkbox", checked: layer.visible,
             onChange: this.onVisibleChange})
         ),
         TD({className: "layerCell"},
-          DIV({className: "layerImageBox" + selected},
-            IMG({className: "layerImage img-thumbnail", src: imageUrl,
+          DIV({className: "layerImageBox thumbnail" + selected},
+            IMG({className: "layerImage", src: imageUrl,
               key: layer.id, "data-id": layer.id,
               onDragStart: this.props.dragStart,
               onDragEnd: this.props.dragEnd}),
@@ -177,7 +177,7 @@ var LayerRow = React.createFactory(React.createClass({
           )
         )
       )
-    )
+    );
   },
 
   onRemove: function(event) {
@@ -211,15 +211,15 @@ var AddLayerRow = React.createFactory(React.createClass({
         TD({className: "layerCell"}),
         TD({className: "layerCell"},
           DIV({className: "layerImageBox"},
-            DIV({className: "layerImage add img-thumbnail"},
-              DIV({onClick: this.props.addLayer},
+            DIV({className: "layerImage add"},
+              DIV({className: "btn", onClick: this.props.addLayer},
                 Locale.$STR("pixelPerfect.label.addLayer")
               )
             )
           )
         )
       )
-    )
+    );
   },
 }));
 
